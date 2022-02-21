@@ -7,3 +7,5 @@ At first the project was created just to meet the MVP of what the directions out
 
 # Pages
 Like most of my other projects the live version is viewable thanks to the pages hosting service from GitHub.
+
+It can be accessed here: https://dbevan770.github.io/odin-etch-a-sketch/
