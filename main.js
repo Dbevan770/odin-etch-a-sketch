@@ -7,6 +7,11 @@ let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
+let eraseMode = false;
+const eraseBtn = document.querySelector('#erase');
+const drawBtn = document.querySelector('#draw');
+const modeText = document.querySelector('.modetext');
+
 // Add click event listeners to each of the grid size buttons
 const gridBtns = document.querySelectorAll('.gridbtn');
 gridBtns.forEach(gridBtn =>{
@@ -29,6 +34,25 @@ gridBtns.forEach(gridBtn =>{
 // Set reset button to delete the grid
 reset.addEventListener('click', () => {
     emptyGrid();
+});
+
+eraseBtn.addEventListener('click', () => {
+    if(!eraseMode){
+        eraseMode = true;
+        drawBtn.classList.remove('selected');
+        eraseBtn.classList.add('selected');
+    } 
+
+    return;
+});
+
+drawBtn.addEventListener('click', () => {
+    if(eraseMode){
+        eraseMode = false;
+        eraseBtn.classList.remove('selected');
+        drawBtn.classList.add('selected');
+    }
+    return;
 });
 
 function createGrid(size){
@@ -57,5 +81,19 @@ function emptyGrid(){
 function fillGrid(gridBox){
     if(gridBox.type === 'mouseover' && !mouseDown) return;
 
-    gridBox.target.style.backgroundColor = '#000000';
+    if(!eraseMode){
+        gridBox.target.style.backgroundColor = '#000000';
+    }
+    else{
+        gridBox.target.style.backgroundColor = '#FFFFFF';
+        gridBox.target.style.border = "1px solid black";
+    }
+    
 }
+
+function SetDefaults(){
+    eraseMode = false;
+    drawBtn.classList.add('selected');
+}
+
+document.onload(SetDefaults());

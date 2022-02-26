@@ -14,16 +14,24 @@
             <div class="panel-header">
                 Etch-A-Sketch
             </div>
-            <div class="panel-content">
-                <div class="btn-container">
-                    <button class="gridbtn" id="4">4x4</button>
-                    <button class="gridbtn" id="8">8x8</button>
-                    <button class="gridbtn" id="16">16x16</button>
-                    <button class="gridbtn" id="32">32x32</button>
-                    <button class="gridbtn" id="64">64x64</button>
-                    <button id="reset">Reset</button>
+            <div class="mode-container">
+                <div class="mode-btns">
+                    <button class="mode-select" id="draw">Draw</button>
+                    <button class="mode-select" id="erase">Erase</button>
                 </div>
-                <div class="grid-container"></div>
+            </div>
+            <div class="panel-wrapper">
+                <div class="panel-content">
+                    <div class="btn-container">
+                        <button class="gridbtn" id="4">4x4</button>
+                        <button class="gridbtn" id="8">8x8</button>
+                        <button class="gridbtn" id="16">16x16</button>
+                        <button class="gridbtn" id="32">32x32</button>
+                        <button class="gridbtn" id="64">64x64</button>
+                        <button id="reset">Reset</button>
+                    </div>
+                    <div class="grid-container"></div>
+                </div>
             </div>
             <div class="panel-footer tooltip">32x32 and above may cause performance issues on lower end systems.</div>           
         </div>
